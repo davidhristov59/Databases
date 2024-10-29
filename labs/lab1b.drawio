@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15" version="24.8.2">
   <diagram name="Page-1" id="IUBWaIYplw8iJ0pqpUme">
-    <mxGraphModel dx="1861" dy="524" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2895" dy="1048" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -289,9 +289,6 @@
             <mxPoint x="-60" y="900" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="MgPxkPBnViZHf7p6BSbb-89" value="најдобра играч може да биде на повеќе турнири" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="-460" y="770" width="300" height="30" as="geometry" />
-        </mxCell>
         <mxCell id="MgPxkPBnViZHf7p6BSbb-90" value="Терен" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="310" y="900" width="120" height="60" as="geometry" />
         </mxCell>
@@ -348,15 +345,6 @@
         </mxCell>
         <mxCell id="MgPxkPBnViZHf7p6BSbb-105" value="М" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="-15" y="940" width="30" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="MgPxkPBnViZHf7p6BSbb-106" value="provoke turner more da se oddrzuvaat na provoke tereni" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="-560" y="1140" width="320" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="MgPxkPBnViZHf7p6BSbb-107" value="na 1 teren moze da se oddrzuvat povere turniri&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="-554" y="1110" width="280" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="MgPxkPBnViZHf7p6BSbb-108" value="Roland garros ima poveke tereni" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="-540" y="1170" width="200" height="30" as="geometry" />
         </mxCell>
         <mxCell id="MgPxkPBnViZHf7p6BSbb-109" value="година на оддржување" style="ellipse;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="-160" y="1310" width="100" height="40" as="geometry" />
@@ -423,9 +411,6 @@
             <mxPoint x="-88" y="1100" as="sourcePoint" />
             <mxPoint x="-70" y="1040" as="targetPoint" />
           </mxGeometry>
-        </mxCell>
-        <mxCell id="v9a5a7ZqzRYtwjDxi_aq-18" value="Година на оддржување" style="shape=ext;margin=3;double=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
-          <mxGeometry x="-483" y="1260" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="v9a5a7ZqzRYtwjDxi_aq-20" value="Натпревар" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="970" y="1180" width="120" height="60" as="geometry" />
@@ -507,9 +492,6 @@
             <mxPoint x="70" y="530" as="sourcePoint" />
             <mxPoint x="700" y="1060" as="targetPoint" />
           </mxGeometry>
-        </mxCell>
-        <mxCell id="v9a5a7ZqzRYtwjDxi_aq-38" value="1 турнир може да има повеќе натпревари&lt;div&gt;повеќе натпревари може да имаат повеќе турнири&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="95" y="1293" width="310" height="40" as="geometry" />
         </mxCell>
         <mxCell id="v9a5a7ZqzRYtwjDxi_aq-39" value="N" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="900" y="1185" width="30" height="30" as="geometry" />
