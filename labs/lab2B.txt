@@ -1,0 +1,100 @@
+1.Најди ги имињата на сите студенти кои биле запишани (enroll) на барем еден
+курс во зимскиот семестар 2020 (WiSe 2020)
+
+πName(σ(Quarter='WiSe 2020') (STUDENT ⨝ ENROLL))
+
+
+2. Најди ги насловите на сите книги чиј автор е Neumann или Blum и кои биле
+препорачани на курс од областа информатика (Informatik).
+
+//1 opcija 
+books=((σAuthor='Neumann'(BOOK)) ∪ σAuthor='Blum'(BOOK))
+πBook_Title(σDept='Informatik'((books⨝BOOK_RECOMMENDATION)⨝COURSE))
+
+//2 opcija 
+πBook_Title(σ(Author='Neumann' ∨ Author='Blum')(BOOK) ⨝ (BOOK_RECOMMENDATION) ⨝ (σ(Dept='Informatik') (COURSE)))
+
+
+3. Најди ги имињата на сите студенти кои студираат Medieninformatik и во
+зимскиот семестар 2020 имале оценка поголема од 60 и помала од 80 на некој
+курс од областа Informatik
+
+//1 OPCIJA(MOJA)
+πName(σMajor='Medieninformatik'(σQuarter='WiSe 2020'(σGrade > 60 (σGrade<80 (σDept='Informatik'(STUDENT⨝ENROLL⨝COURSE))))))
+
+//2 OPCIJA
+πName(σ(Major='Medieninformatik')(STUDENT) ⨝ (σ(Dept='Informatik') (COURSE) ⨝ σ(Quarter='WiSe 2020' ∧ Grade>60 ∧ Grade<80) (ENROLL)))
+
+4.За секој курс, најди ја просечната оценка на студентите во зимскиот семестар
+2020.
+
+γCourseId;AVG(Grade)→avg_grade(σQuarter='WiSe 2020'(COURSE⨝ENROLL))
+
+//EXPLAINED
+γCourseId;AVG(Grade) → avg_grade(...): This is a grouping and aggregation operation:
+	•	γ (gamma) indicates a grouping operation.
+	•	CourseId specifies that the data should be grouped by the CourseId attribute, meaning that we'll calculate results for each course individually.
+	•	AVG(Grade) calculates the average of the Grade attribute for each group of rows (each course in the Winter Semester 2020).
+	•	→ avg_grade renames this calculated average to avg_grade, which is the final output attribute name for this average grade.
+
+5.Најди ги сите курсеви кои се од областа Medien или на кои била препорачана
+книгата Workshop Javascript.
+
+med_course=πCourseId(σDept='Medien'(COURSE))
+book=πBook_ISBN(σBook_Title='Workshop Javascript'(BOOK))
+merge=πCourseId(BOOK_RECOMMENDATION⨝book)
+result=(med_course ∪ merge)
+result
+
+6.Најди ги имињата на студентите со највисока и најниска просечна оценка
+(просечната оценка е просекот на оценките на сите курсеви на кои бил запишан
+студентот).
+
+student = (γName; AVG(Grade) → avg_grades(STUDENT⨝ENROLL))
+
+(γ; MAX(avg_grades) → avg_grades (student)⨝student) ∪ 
+(γ; MIN(avg_grades) → avg_grades (student)⨝student)
+
+//savenuvam sve vo avg_grades -> kako lambda izraz e nesto otprilika tamu gi zacuvam site vrednosti
+————————————————————————————————————————————————
+
+DOPOLNITELNO BARANJE (Moj termin)
+
+1. Најди ги сите студенти кои студираат Medieninformatik и слушале некој курс од областа Design или Medien
+
+med_student = (σMajor='Medieninformatik'(STUDENT))
+course_name = (σDept='Design' ∨ Dept='Medien'(COURSE))
+studentSSN = πSSN,Name,Major,Bdate((course_name⨝med_student)⨝ENROLL)
+studentSSN
+
+//ENROLL - tuka cuvame PK I FK za SSN i CourseId - zaednicki ni se za Student i Course
+
+
+2. Најди ги сите студенти кои слушале курс од областа Informatik или областа Medien, но не и од двете
+
+info_course = πSSN(σDept='Informatik'(COURSE⨝ENROLL))
+medien_course = πSSN(σDept='Medien'(COURSE⨝ENROLL))
+result = info_course - medien_course
+result
+
+//moram razlika bidejki vika NE I OD DVETE (odzemam od info_course, ne mozam od medien da odzemam, forata e sto ima i od avete i so ova gi filtriram)
+
+
+————————————————————————————————————————————————
+
+DOPOLNITELNO BARANJE (GOC)
+1. inform za site studenti sto studiraat Medientechnik i slusale nekoj kurs od oblasta Design
+
+medtech = σMajor='Medientechnik'(STUDENT)
+design_course = σDept='Design'(COURSE)
+res=πSSN,Name,Major,Bdate(medtech⨝design_course⨝ENROLL)
+res
+
+2. site studenti koi ne slusale kursevi od oblasta Informatik
+
+site=(STUDENT⨝COURSE⨝ENROLL)
+student_informatik = (σDept='Informatik'(site))
+πSSN,Name,Major,Bdate(site - student_informatik)
+
+//cuvam I ENROLL hosto ima PK I FK od Student i Course
+//odzemam OD SITE bidejki vika KOI NE SLUSALE informatika
